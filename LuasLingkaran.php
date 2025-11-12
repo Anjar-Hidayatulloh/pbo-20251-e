@@ -1,12 +1,20 @@
-<?php
+<?PHP
 
-class LuasLingkaran {
+class luaslingkaran {
     public const phi = 3.14;
     public int $jari;
+
+    public function tampil($nama = 'ban') {
+        $rumus = luaslingkaran:: phi* $this->jari * $this->jari;
+        echo "lingkaran {$nama} Hasilnya adalah:{$rumus}";
+    }
+    public static function testing(){
+        echo "ini dari static";
+    }
 }
 
-$lingkaran = new LuasLingkaran();
+$lingkaran = new luaslingkaran();
 $lingkaran->jari = 16;
-$rumus = LuasLingkaran::phi * $lingkaran->jari * $lingkaran->jari;
+$lingkaran->tampil('roda'); //panggil method
 
-echo "Hasilnya adalah: ". $rumus;
+luaslingkaran::testing();
